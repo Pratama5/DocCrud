@@ -16,7 +16,7 @@ Clone repository ini ke mesin lokal Anda:
 ### 3. Masuk ke Direktori Proyek
 Navigasi ke direktori proyek:
 ```bash
-   cd repository-name
+   cd DocCrud
 ```
 
 ### 4. Build dan Jalankan Docker Container
