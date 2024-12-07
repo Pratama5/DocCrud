@@ -10,7 +10,7 @@ Pastikan Docker sudah terinstal di sistem Anda. Jika belum, unduh dan instal Doc
 ### 2. Clone Repository
 Clone repository ini ke mesin lokal Anda:
 ```bash
-   git clone https://github.com/username/repository-name.git
+   git clone https://github.com/Pratama5/DocCrud.git
 ```
 
 ### 3. Masuk ke Direktori Proyek
