@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocCrud - Daftar Dokumen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        .button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .button.edit {
+            background-color: #ffc107;
+        }
+        .button.delete {
+            background-color: #dc3545;
+        }
+        .button:hover {
+            opacity: 0.8;
+        }
+        .made-by {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 16px;
+            color: #555;
+        }
+        .made-by a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .made-by a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>DocCrud - Daftar Dokumen</h1>
+    <a href="{{ url_for('create') }}" class="button">Tambah Dokumen Baru</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Judul</th>
+                <th>Konten</th>
+                <th>Opsi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for doc in documents %}
+                <tr>
+                    <td>{{ doc.title }}</td>
+                    <td>{{ doc.content[:100] }}...</td>
+                    <td>
+                        <a href="{{ url_for('update', id=doc.id) }}" class="button edit">Edit</a>
+                        <a href="{{ url_for('delete', id=doc.id) }}" class="button delete">Hapus</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Made by Section -->
+    <div class="made-by">
+        <p>Made by:</p>
+        <p>
+            Andika Rizki Pratama (1101210107) <br>
+            Nur Said (1101213312) <br>
+            Putra Pratama Sijabat (1101210298)
+        </p>
+    </div>
+</body>
+</html>
+
